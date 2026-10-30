@@ -20,6 +20,12 @@ source of truth. If this file and SPECS.md conflict, SPECS.md wins.
   packages, and file changes.
 - Privileged operations (sudo, pacman, service changes) always require explicit
   authorization. Read-only inspection is fine.
+- If an operation is blocked by missing permissions, ask the user for them
+  and wait — the user can grant them. Never improvise silent workarounds.
+- When a privileged step cannot be executed directly (e.g., sudo prompts
+  for a password), split the task into sub-steps to give the user an
+  intervention point: prepare everything, hand over the exact command(s)
+  to run in their terminal, then verify the outcome once they report back.
 - The agent prepares changes in the working tree. The user reviews, validates,
   and creates all commits. Never commit, push, or tag.
 - Keep proposals concise: what, why, alternatives considered, how to validate.
@@ -84,6 +90,11 @@ Reproducibility rules:
   pending tasks. Keep it short — it exists so any future session or model
   can pick up where the last one stopped.
 - Read it at the start of every session. Update it before ending.
+- When reading STATUS.md, verify each pending task against the actual
+  system state and remove the ones already fulfilled. Pending tasks are a
+  live view of what is left to do, not an archive of old requests.
+- The module list is orientative: it will be redefined from the base
+  system analysis — findings, questions, and recommendations (SPECS.md §5).
 
 ## Hard don'ts
 

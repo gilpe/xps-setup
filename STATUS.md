@@ -6,17 +6,15 @@ in SPECS.md; the configuration itself lives in the repo.
 
 ## Current focus
 
-Project tooling in progress: git identity configured, origin URL fixed,
-install.sh created. Pending (user side): run `sudo ./install.sh`,
-`gh auth login` + `gh auth setup-git`, then commit and push. Next:
-choose the first module based on dependencies (SPECS.md §5 — e.g., the
-text editor may unblock Hyprland work).
+Project tooling complete and validated (git identity, fixed origin,
+GitHub CLI auth, initial push). Next module: base system and hardware
+diagnostics — start with the read-only inspection workflow (AGENTS.md).
 
 ## Modules
 
 | Module | Status | Notes |
 |---|---|---|
-| Base system and hardware diagnostics | not started | |
+| Base system and hardware diagnostics | next | Chosen as first module |
 | Hyprland and desktop environment | not started | |
 | Terminal and shell | not started | |
 | Text editor | not started | |
@@ -26,7 +24,8 @@ text editor may unblock Hyprland work).
 | Productivity tools | not started | |
 | Appearance and customization | not started | |
 
-Module list, order, and scope are provisional (SPECS.md §5).
+The module list is orientative: it will be redefined from the base
+system analysis — findings, questions, and recommendations (SPECS.md §5).
 
 ## Decisions
 
@@ -39,10 +38,13 @@ Module list, order, and scope are provisional (SPECS.md §5).
   authentication via GitHub CLI over HTTPS. install.sh created with
   `github-cli` as first package. Identity and credentials are user-level
   and excluded from install.sh per SPECS.md §6.
+- 2026-10-30 — First module chosen: base system and hardware diagnostics
+  (dependency root; informs all hardware-dependent choices).
+- 2026-10-30 — AGENTS.md updated: permission-request rule, sudo
+  sub-steps with user intervention point, pending-task verification on
+  session start.
 
 ## Pending tasks
 
-- User: run `sudo ./install.sh` (installs github-cli).
-- User: `gh auth login` + `gh auth setup-git`, then commit and push
-  AGENTS.md, STATUS.md, install.sh.
-- Choose and start the first module.
+- Start the base system and hardware diagnostics module (workflow per
+  AGENTS.md: read-only inspection first, proposal before any change).
