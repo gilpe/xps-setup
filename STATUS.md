@@ -7,10 +7,9 @@ in SPECS.md; the configuration itself lives in the repo.
 ## Current focus
 
 Module 1 (base system and hardware diagnostics) completed 2026-10-31 via
-read-only inspection. Verified inventory, base-system baseline, findings
-and open questions are recorded in HARDWARE.md. Next: choose the next
-module — suggested order per SPECS.md §5: terminal/shell and text editor
-before Hyprland (the editor makes configuring everything else easier).
+read-only inspection. Verified inventory, base-system baseline and
+findings are recorded in HARDWARE.md. What comes next lives in Pending
+tasks below.
 
 ## Modules
 
@@ -27,8 +26,9 @@ before Hyprland (the editor makes configuring everything else easier).
 | Productivity tools | not started | |
 | Appearance and customization | not started | |
 
-The module list is orientative and evolves with the project. Findings and
-open questions per module are tracked in HARDWARE.md.
+The module list is orientative and evolves with the project. Hardware
+facts and findings live in HARDWARE.md; open questions live in the
+decision backlog under Pending tasks.
 
 ## Decisions
 
@@ -58,15 +58,30 @@ open questions per module are tracked in HARDWARE.md.
 - 2026-10-31 — Reproducibility fix: `git` and `opencode` (installed
   manually on 2026-10-30, missing from the script) captured in
   install.sh.
+- 2026-10-31 — Pending work centralized in STATUS.md: "Pending tasks"
+  now splits into next steps (actions) and a decision backlog (deferred
+  per-module decisions, removed as resolved). HARDWARE.md is
+  reference-only and carries no TODOs; rule recorded in AGENTS.md.
 
 ## Pending tasks
 
+### Next steps (actions)
+
 - Choose and start the next module (suggested: terminal/shell and text
-  editor first, per SPECS.md §5).
+  editor first, per SPECS.md §5 — the editor makes configuring the rest
+  easier).
 - Inspect rEFInd configuration under /boot and clean the stale NVRAM
   boot entry (both need sudo) when boot polish is tackled.
 - Optionally confirm whether BIOS 1.13.0 is the final release for the
   9350.
-- Track open questions in HARDWARE.md (hibernation, PPD vs TLP,
-  NetworkManager-wait-online, linux-lts fallback, touchscreen support
-  level).
+
+### Decision backlog (deferred to modules; remove each row when resolved)
+
+| Open question | Module |
+|---|---|
+| Enable hibernation? (needs disk swap + resume= + bootloader change) | Power management |
+| Touchscreen level of support (gestures vs. disable) | Hyprland |
+| power-profiles-daemon vs. TLP | Power management |
+| Disable NetworkManager-wait-online? | Boot polish / networking |
+| rEFInd menu timeout and HiDPI font | Boot polish |
+| Add a linux-lts fallback kernel? | System resilience |

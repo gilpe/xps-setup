@@ -91,6 +91,8 @@ Reproducibility rules:
 - The single, lightweight progress log: state per module, decisions made,
   pending tasks. Keep it short — it exists so any future session or model
   can pick up where the last one stopped.
+- It is the single home for pending tasks and the decision backlog;
+  reference documents (e.g., HARDWARE.md) do not carry TODO lists.
 - Read it at the start of every session. Update it before ending.
 - When reading STATUS.md, verify each pending task against the actual
   system state and remove the ones already fulfilled. Pending tasks are a
