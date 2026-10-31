@@ -14,7 +14,7 @@ OpenCode and the available AI models will act as technical assistants throughout
 - **Display:** QHD.
 - **Operating system:** Vanilla Arch Linux.
 
-Technical decisions must account for the hardware's capabilities. Before making hardware-dependent decisions, inspect the system's actual state. Shared configuration must distinguish general settings from machine-specific ones.
+Technical decisions must account for the hardware's capabilities. Before making hardware-dependent decisions, inspect the system's actual state. Shared configuration must distinguish general settings from machine-specific ones. The verified hardware inventory and base-system baseline are recorded in `HARDWARE.md`.
 
 ## 3. Desktop Environment and Tools
 

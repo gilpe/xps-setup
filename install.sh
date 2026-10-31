@@ -18,6 +18,8 @@ fi
 # Packages from the official repositories.
 packages=(
     github-cli   # GitHub CLI: git auth over HTTPS (gh auth login)
+    git          # Version control (previously installed by hand)
+    opencode     # AI coding agent driving this project (same)
 )
 
 pacman -S --needed --noconfirm "${packages[@]}"

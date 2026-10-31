@@ -65,6 +65,8 @@ Target layout (files appear when the project needs them):
 - `SPECS.md` — project requirements; source of truth.
 - `AGENTS.md` — this guide.
 - `STATUS.md` — lightweight progress log (see below).
+- `HARDWARE.md` — verified hardware inventory and base-system baseline
+  (reference data for hardware-dependent decisions).
 - `install.sh` — system provisioning: everything that is NOT application
   configuration. Package installation (official repos and AUR), AUR helper
   setup, enabling services, required system file changes (e.g., /etc).
