@@ -38,8 +38,9 @@ source of truth. If this file and SPECS.md conflict, SPECS.md wins.
   visual gains at the cost of responsiveness or stability.
 - Wayland/Hyprland compatible by default. Prefer TUI where practical, but
   choose GUI when it offers clear advantages.
-- Visual consistency: Atom One Dark (dark) and Atom One Light (light) are the
-  reference palettes. Define colors once; never duplicate them across apps.
+- Visual consistency: the matugen-generated scheme (from the current
+  wallpaper) is the single color source. Define colors once in matugen
+  templates; never hard-code color values in application configs.
 - No premature complexity or automation. Automated theme switching is
   explicitly out of scope for the initial phase.
 - Do not assume which display manager, terminal, shell, editor, file manager,

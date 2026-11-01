@@ -33,16 +33,20 @@ Technical decisions must account for the hardware's capabilities. Before making 
 
 ## 4. Visual Identity
 
-The reference color schemes will be Atom's palettes:
+The color system is dynamic: matugen generates a Material You scheme
+from the current wallpaper, and every component consumes that generated
+scheme through matugen templates (terminal, shell, TUI applications,
+text editor, file manager, bar, launcher, notifications, lock screen,
+and the compositor itself).
 
-- **Dark mode:** Atom One Dark.
-- **Light mode:** Atom One Light.
-
-Maintain a consistent appearance across the terminal, shell, TUI applications, text editor, file manager, desktop environment, notifications, and other customizable components, respecting each application's capabilities.
-
-The configuration must support adding a switch between One Dark and One Light while avoiding unnecessary duplication of color definitions.
-
-Automated theme switching is not part of the initial phase. Implement it once the main components are configured and a concrete need has been established.
+- The matugen configuration is the single source of color definitions.
+  Application configs never hard-code color values; they consume
+  generated files.
+- Default: dark scheme. A light variant remains available through
+  matugen's scheme configuration; an automated dark/light switch stays
+  out of the initial phase.
+- Atom One Dark/Light were the reference palettes until 2026-11-01,
+  when the matugen pipeline superseded them (user decision).
 
 ## 5. Modularity and Planning
 
