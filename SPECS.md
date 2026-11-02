@@ -4,7 +4,7 @@
 
 Progressively configure a personal Arch Linux workstation, starting from a clean installation and building a functional, lightweight, consistent, maintainable environment tailored to the user's needs.
 
-OpenCode and the available AI models will act as technical assistants throughout the project. Work will span multiple independent sessions, potentially using different models, without requiring the entire configuration to be completed in a single session.
+OpenCode and the available AI models will act as technical assistants throughout the project. Work may span one or several sessions, potentially with different models; the user defines each session's scope (see §5).
 
 ## 2. Reference Hardware
 
@@ -18,10 +18,29 @@ Technical decisions must account for the hardware's capabilities. Before making 
 
 ## 3. Desktop Environment and Tools
 
-- **Compositor:** Hyprland.
 - Configuration will be developed incrementally, introducing components as actual needs arise.
 - Prefer lightweight, maintainable solutions that integrate well with Wayland and Hyprland.
-- Do not assume in advance which display manager, terminal, shell, text editor, file manager, or notification system will be used.
+- Component choices are premises (table below), not assumptions: they were approved by the user and are revisable only through a documented decision. Open choices live in the STATUS.md decision backlog until decided, then graduate here.
+
+### Chosen components (premises)
+
+Approved 2026-11-01.
+
+| Component | Choice |
+|---|---|
+| Compositor | Hyprland |
+| Terminal emulator | ghostty |
+| Color system | matugen (Material You, generated from the wallpaper) |
+| Status bar | waybar |
+| App launcher | fuzzel |
+| Wallpaper daemon | awww (formerly swww) |
+| Web browser | Brave |
+| Text editor | Neovim |
+| Shell | fish |
+| File manager | superfile |
+| AUR helper | paru |
+| Wi-Fi management | wlctl (NetworkManager backend; nmtui stays as fallback) |
+| Bluetooth management | bluetuith |
 
 ### Design Principles
 
@@ -48,30 +67,31 @@ and the compositor itself).
 - Atom One Dark/Light were the reference palettes until 2026-11-01,
   when the matugen pipeline superseded them (user decision).
 
-## 5. Modularity and Planning
+## 5. Session-driven Planning
 
-Organize the work into independent modules that can be addressed across separate sessions. Initial modules may include:
+Work is organized by user-defined sessions, not a fixed roadmap. At the
+start of each session the user sets its scope: install new components,
+deepen existing ones, or finish as much as desired — possibly the whole
+system. Sessions may be one or many, with one or several models.
 
-- Base system and hardware diagnostics.
-- Hyprland and desktop environment.
-- Terminal and shell.
-- Text editor.
-- File manager.
-- Notifications and screen locking.
-- Audio, networking, connectivity, and peripherals.
-- Productivity tools.
-- Appearance and customization.
+- Dependencies are constraints, not a sequence: before proposing, the
+  agent checks the session scope against the component constraints
+  recorded in STATUS.md and surfaces prerequisites or conflicts.
+- A component may land at basic depth (installed, minimal usable
+  configuration) and be deepened later (theming, keybinds, full
+  integration); both are valid stopping points. The depth reached is
+  recorded in the STATUS.md inventory.
+- STATUS.md is the single progress truth: component states, deferred
+  validations, decisions, and the decision backlog. A session is not
+  closed until it reflects the actual system state.
 
-The final module list, order, and scope will be determined as the project evolves.
-
-Establish an implementation order based on dependencies, importance, and usefulness for subsequent tasks. For example, configuring a text editor first may make it easier to configure Hyprland, even if completing the desktop environment is a higher priority.
-
-Each module must define:
+Each component, whenever it is worked on, must define:
 
 - A clear objective.
-- Its dependencies.
+- Its dependencies and constraints.
 - Its configuration and design decisions.
-- Appropriate validation criteria.
+- Appropriate validation criteria — or a registered deferred validation
+  when validation is not possible yet.
 - Its final status and outstanding tasks.
 
 ## 6. Reproducibility
@@ -97,18 +117,18 @@ The agent may prepare modifications in the working tree, but the user is respons
 
 ## 8. Workflow
 
-Follow an incremental process for each module:
+Follow an incremental process within each session:
 
-1. Inspect the system's current state.
-2. Identify requirements, constraints, and dependencies.
-3. Research relevant alternatives.
+1. Read STATUS.md; summarize the current state (component inventory, deferred validations, decision backlog) and ask the user for the session scope.
+2. Check the scope against component constraints; surface prerequisites or conflicts.
+3. Inspect the system's current state (read-only) and research as needed.
 4. Propose a solution and obtain authorization before modifying the system.
 5. Implement only approved changes.
-6. Validate the results.
+6. Validate the results — or register a deferred validation when validation is not possible yet.
 7. Document decisions and the final configuration.
-8. Update project status and outstanding tasks for future sessions.
+8. Update STATUS.md: inventory states and depths, deferred validations, decisions, backlog. A session is not closed until STATUS.md reflects the actual system state.
 
-Aim to complete and validate each module before moving on, respecting dependencies while maintaining an overall view of the system.
+Components may be left at basic depth intentionally, to be deepened in a later session; what must never be left behind is an updated STATUS.md.
 
 ## 9. Success Criteria and Evolution
 

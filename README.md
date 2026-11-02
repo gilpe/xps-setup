@@ -12,4 +12,4 @@ verified inventory in HARDWARE.md.
 - STATUS.md — progress log
 - HARDWARE.md — verified hardware inventory and base-system baseline
 - install.sh — system provisioning (packages, services, system files)
-- dotfiles/ — application configuration (created as modules progress)
+- dotfiles/ — application configuration (created as components land)

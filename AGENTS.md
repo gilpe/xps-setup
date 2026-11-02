@@ -7,7 +7,8 @@ source of truth. If this file and SPECS.md conflict, SPECS.md wins.
 ## Project context
 
 - Incremental configuration of a personal Arch Linux workstation, built
-  module by module across multiple sessions, potentially with different models.
+  session by session: the user defines each session's scope, potentially
+  with different models.
 - Reference hardware: Dell XPS 13 9350 (6th-gen Core i7, 16 GB RAM, QHD
   display), vanilla Arch Linux. Inspect the real system state before any
   hardware-dependent decision; prefer read-only commands. Never assume.
@@ -43,21 +44,30 @@ source of truth. If this file and SPECS.md conflict, SPECS.md wins.
   templates; never hard-code color values in application configs.
 - No premature complexity or automation. Automated theme switching is
   explicitly out of scope for the initial phase.
-- Do not assume which display manager, terminal, shell, editor, file manager,
-  or notification system will be used — propose alternatives and get approval.
+- Component choices are premises recorded in SPECS.md §3. Introduce or
+  change tools only through an approved, documented decision; open choices
+  live in the STATUS.md decision backlog.
 
-## Workflow per module
+## Workflow per session
 
-1. Inspect the current system state (read-only).
-2. Identify requirements, constraints, and dependencies.
-3. Research relevant alternatives.
+1. Read STATUS.md; summarize the current state (component inventory,
+   deferred validations, decision backlog) and ask the user for the
+   session scope.
+2. Check the scope against component constraints; surface prerequisites
+   or conflicts. Dependencies are constraints, not an order.
+3. Inspect the current system state (read-only); research alternatives.
 4. Propose a solution and wait for authorization.
 5. Implement only the approved changes.
-6. Validate the results.
+6. Validate the results — or register a deferred validation in STATUS.md
+   when validation is not possible yet.
 7. Document decisions and the final configuration.
-8. Update STATUS.md for future sessions.
+8. Update STATUS.md (inventory states and depths, deferred validations,
+   decisions, backlog). A session is not closed until STATUS.md reflects
+   the actual system state.
 
-Aim to complete and validate each module before moving on.
+Components may land at basic depth and be deepened in a later session;
+record the depth reached. The only step that must never be postponed is
+the STATUS.md update.
 
 ## Repo layout and reproducibility
 
@@ -83,23 +93,28 @@ Reproducibility rules:
   a bug — the goal is a setup replicable on other machines.
 - Keep `install.sh` simple, readable, and safe to re-run when practical.
 - Separate general configuration from machine-specific settings in both.
-- Document required packages, services, and inter-module dependencies as
-  they are introduced.
+- Document required packages, services, and inter-component dependencies
+  as they are introduced.
 - Never include secrets or personal data in shared configuration.
 
 ## STATUS.md
 
-- The single, lightweight progress log: state per module, decisions made,
-  pending tasks. Keep it short — it exists so any future session or model
-  can pick up where the last one stopped.
-- It is the single home for pending tasks and the decision backlog;
-  reference documents (e.g., HARDWARE.md) do not carry TODO lists.
-- Read it at the start of every session. Update it before ending.
-- When reading STATUS.md, verify each pending task against the actual
-  system state and remove the ones already fulfilled. Pending tasks are a
-  live view of what is left to do, not an archive of old requests.
-- The module list is orientative: it will be redefined from the base
-  system analysis — findings, questions, and recommendations (SPECS.md §5).
+- The single, lightweight progress log, in four parts: the component
+  inventory (flat table: state per component — not installed, basic,
+  deep — plus constraints), the deferred-validations registry, the
+  decisions log, and the decision backlog. Keep it short — it exists so
+  any future session or model can pick up where the last one stopped.
+- Tool choices are premises in SPECS.md §3; STATUS.md tracks state only.
+  An open choice is a backlog row until decided; once decided, it
+  graduates to the SPECS.md premises table via a decision entry.
+- It is the single home for open items (deferred validations, decision
+  backlog); reference documents (e.g., HARDWARE.md) do not carry TODO
+  lists.
+- Read it at the start of every session. Update it before ending: a
+  session is not closed until STATUS.md reflects the actual system state.
+- When reading STATUS.md, verify its contents against the actual system
+  state (inventory states, deferred validations, backlog rows) and
+  correct anything stale. It is a live view, not an archive.
 
 ## Hard don'ts
 
