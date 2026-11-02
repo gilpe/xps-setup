@@ -4,7 +4,10 @@
 # Everything that is NOT application configuration belongs here: package
 # installation (official repos and AUR), AUR helper setup, enabling
 # services, required system file changes (e.g., /etc). Application
-# configuration lives in dotfiles/ (see AGENTS.md).
+# configuration lives in dotfiles/ (see README.md §6).
+#
+# User-level and deliberately not scripted: git identity and
+# `gh auth login` (personal data stays out of the repo; README.md §6).
 #
 # Run as root: sudo ./install.sh
 

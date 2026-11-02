@@ -2,29 +2,38 @@
 
 ## 1. Objective
 
-Progressively configure a personal Arch Linux workstation, starting from a clean installation and building a functional, lightweight, consistent, maintainable environment tailored to the user's needs.
+Progressively configure a personal Arch Linux workstation into a
+functional, lightweight, visually consistent, maintainable, and
+reasonably reproducible environment tailored to the user's needs.
+OpenCode AI models assist as technical helpers across one or many
+sessions, possibly different models; the user defines each session's
+scope and creates all commits. Growth is deliberate — no premature
+complexity or automation without a concrete need.
 
-OpenCode and the available AI models in OpenCode Go subscription, will act as technical assistants throughout the project. Work may span one or several sessions, potentially with different models; the user defines each session's scope (see §5).
+## 2. Reference hardware
 
-## 2. Reference Hardware
+Dell XPS 13 9350 (Intel Core i7-6500U, 16 GB RAM, QHD+ 3200x1800),
+vanilla Arch Linux. Verified hardware facts and base-system baseline:
+`HARDWARE.md`. Inspect the real system before any hardware-dependent
+decision; keep general configuration separate from machine-specific
+settings.
 
-- **Device:** Dell XPS 13 9350.
-- **CPU:** 6th-generation Intel Core i7.
-- **RAM:** 16 GB.
-- **Display:** QHD.
-- **Operating system:** Vanilla Arch Linux.
+## 3. Premises
 
-Technical decisions must account for the hardware's capabilities. Before making hardware-dependent decisions, inspect the system's actual state. Shared configuration must distinguish general settings from machine-specific ones. The verified hardware inventory and base-system baseline are recorded in `HARDWARE.md`.
+Design principles:
 
-## 3. Desktop Environment and Tools
+- **Simplicity** — explicit, understandable configs; no unnecessary
+  abstractions, layers, or dependencies.
+- **Performance** — lightweight components suited to this hardware; no
+  marginal visual gains at the cost of responsiveness or stability.
+- **Tools** — TUI first; GUI when it offers clear advantages;
+  Wayland/Hyprland compatible by default.
+- **Visual consistency** — one color source: the matugen scheme (§4).
+- **Maintainability** — configs easy to understand and modify manually.
 
-- Configuration will be developed incrementally, introducing components as actual needs arise.
-- Prefer lightweight, maintainable solutions that integrate well with Wayland and Hyprland.
-- Component choices are premises (table below), not assumptions: they were approved by the user and are revisable only through a documented decision. Open choices live in the STATUS.md decision backlog until decided, then graduate here.
-
-### Chosen components (premises)
-
-Approved 2026-11-01.
+Components (approved 2026-11-01; revisable only through an approved,
+documented decision — open choices live in the STATUS.md backlog until
+decided, then graduate here):
 
 | Component            | Choice                                                  |
 | -------------------- | ------------------------------------------------------- |
@@ -42,96 +51,52 @@ Approved 2026-11-01.
 | Wi-Fi management     | wlctl (NetworkManager backend; nmtui stays as fallback) |
 | Bluetooth management | bluetuith                                               |
 
-### Design Principles
+## 4. Visual identity
 
-- **Simplicity:** Prefer explicit, understandable configurations. Avoid unnecessary abstractions, layers, and dependencies.
-- **Performance:** Choose components suited to the available hardware and minimize resource usage without sacrificing responsiveness or stability for marginal visual improvements.
-- **Tools:** Prefer TUI applications when appropriate, but do not rule out GUI applications that offer clear functional, integration, or usability advantages.
-- **Visual consistency:** Maintain a unified visual identity across applications and system components, prioritizing readability, contrast, and performance.
-- **Maintainability:** Make configurations easy to understand and modify manually.
+matugen generates a Material You scheme from the current wallpaper —
+the single color source. Every component consumes it through matugen
+templates; application configs never hard-code color values. Dark
+scheme by default; automated dark/light switching is out of scope for
+the initial phase.
 
-## 4. Visual Identity
+## 5. Working model
 
-The color system is dynamic: matugen generates a Material You scheme
-from the current wallpaper, and every component consumes that generated
-scheme through matugen templates (terminal, shell, TUI applications,
-text editor, file manager, bar, launcher, notifications, lock screen,
-and the compositor itself).
+Session-driven, no fixed roadmap: the user sets each session's scope —
+new components, deepening existing ones, or as much as desired.
+Dependencies are constraints, not a sequence. Components may land at
+**basic** depth (installed, minimal usable configuration) and be
+deepened later (**deep**: theming, keybinds, full integration);
+STATUS.md records the state and depth reached. Per-session workflow:
+AGENTS.md.
 
-- The matugen configuration is the single source of color definitions.
-  Application configs never hard-code color values; they consume
-  generated files.
-- Default: dark scheme. A light variant remains available through
-  matugen's scheme configuration; an automated dark/light switch stays
-  out of the initial phase.
-- Atom One Dark/Light were the reference palettes until 2026-11-01,
-  when the matugen pipeline superseded them (user decision).
+Each component, whenever worked on, defines: objective, constraints,
+decisions, validation criteria (or a deferred validation registered in
+STATUS.md), and final state.
 
-## 5. Session-driven Planning
+## 6. Repo layout, reproducibility, version control
 
-Work is organized by user-defined sessions, not a fixed roadmap. At the
-start of each session the user sets its scope: install new components,
-deepen existing ones, or finish as much as desired — possibly the whole
-component or module. Sessions may be one or many, with one or several models.
+Target layout (files appear when the project needs them):
 
-- Dependencies are constraints, not a sequence: before proposing, the
-  agent checks the session scope against the component constraints
-  recorded in STATUS.md and surfaces prerequisites or conflicts.
-- A component may land at basic depth (installed, minimal usable
-  configuration) and be deepened later (theming, keybinds, full
-  integration); both are valid stopping points. The depth reached is
-  recorded in the STATUS.md inventory.
-- STATUS.md is the single progress truth: component states, deferred
-  validations, decisions, and the decision backlog. A session is not
-  closed until it reflects the actual system state.
+- `README.md` — project requirements; source of truth.
+- `AGENTS.md` — operating guide for AI agents.
+- `STATUS.md` — live state: component inventory, deferred validations,
+  decision backlog.
+- `HARDWARE.md` — verified hardware facts and base-system baseline.
+- `install.sh` — system provisioning: packages (official repos and
+  AUR), AUR helper setup, services, required system file changes.
+- `dotfiles/` — application configuration, organized by application,
+  reusable on other machines.
 
-Each component, whenever it is worked on, must define:
+Rules:
 
-- A clear objective.
-- Its dependencies and constraints.
-- Its configuration and design decisions.
-- Appropriate validation criteria — or a registered deferred validation
-  when validation is not possible yet.
-- Its final status and outstanding tasks.
+- System changes belong in `install.sh`; application configuration in
+  `dotfiles/` — never mixed. A system change applied during a session
+  is captured in `install.sh` in the same change set; a manual change
+  missing from the script is a bug.
+- Keep `install.sh` simple, readable, and safe to re-run when practical.
+- Document required packages, services, and inter-component
+  dependencies as they are introduced.
+- Never include secrets or personal data in shared configuration.
 
-## 6. Reproducibility
-
-The configuration must be reasonably portable to other machines and adaptable without relying on the reference hardware.
-
-To achieve this:
-
-- Maintain an installation script and extend it as new packages are introduced.
-- Organize and reuse configuration files (*dotfiles*).
-- Document required packages, tools, services, and inter-module dependencies.
-- Separate general configuration from hardware-specific settings.
-- Avoid undocumented manual changes.
-- Exclude secrets and personal data from shared configuration.
-
-No specific *dotfiles* management tool is required initially.
-
-## 7. Version Control
-
-Use Git to preserve project progress and review changes.
-
-The agent may prepare modifications in the working tree, but the user is responsible for reviewing and validating them and for creating all commits. Implementing a specific version-recovery strategy is not an independent project objective.
-
-## 8. Workflow
-
-Follow an incremental process within each session:
-
-1. Read STATUS.md; summarize the current state (component inventory, deferred validations, decision backlog) and ask the user for the session scope.
-2. Check the scope against component constraints; surface prerequisites or conflicts.
-3. Inspect the system's current state (read-only) and research as needed.
-4. Propose a solution and obtain authorization before modifying the system.
-5. Implement only approved changes.
-6. Validate the results — or register a deferred validation when validation is not possible yet.
-7. Document decisions and the final configuration.
-8. Update STATUS.md: inventory states and depths, deferred validations, decisions, backlog. A session is not closed until STATUS.md reflects the actual system state.
-
-Components may be left at basic depth intentionally, to be deepened in a later session; what must never be left behind is an updated STATUS.md.
-
-## 9. Success Criteria and Evolution
-
-The workstation must meet the user's needs, deliver good performance and visual consistency, remain easy to maintain, and be reasonably reproducible on other machines.
-
-The configuration will evolve as new needs emerge. Future features must be introduced deliberately, avoiding premature complexity or automation that does not yet provide a concrete benefit.
+Version control: the agent prepares changes in the working tree; the
+user reviews, validates, and creates all commits.
