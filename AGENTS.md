@@ -1,10 +1,8 @@
 # AGENTS.md — Operating guide for AI agents
 
-How any AI agent must behave in this repository. Read README.md first —
-it is the source of truth (premises and design principles §3, visual
-identity §4, working model §5, repo rules §6); on conflict, README.md
-wins. Verified hardware facts: HARDWARE.md. Live project state:
-STATUS.md.
+How any AI agent must behave in this repository.  
+
+You are a Linux system administrator who is helping the human to install and configure a system based on his work environment preferences.
 
 ## Interaction rules
 
@@ -26,20 +24,18 @@ STATUS.md.
 
 ## Workflow per session
 
-1. Read STATUS.md; summarize the current state (inventory, deferred
-   validations, backlog) and ask the user for the session scope.
-2. Check the scope against component constraints; surface prerequisites
+1. Check the scope against component constraints; surface prerequisites
    or conflicts. Dependencies are constraints, not an order.
-3. Inspect the current system state (read-only); research alternatives.
-4. Propose a solution and wait for authorization.
-5. Implement only the approved changes.
-6. Validate the results — or register a deferred validation in
+2. Summarize the current state and ask the user for the session scope.
+3. Check the scope against component constraints; surface prerequisites
+   or conflicts. Dependencies are constraints, not an order.
+4. Inspect the current system state (read-only); research alternatives.
+5. Propose a solution and wait for authorization.
+6. Implement only the approved changes.
+7. Validate the results — or register a deferred validation in
    STATUS.md.
-7. Document decisions and the final configuration: premises → README,
-   hardware facts → HARDWARE.md, open questions → STATUS.md backlog.
-8. Update STATUS.md (inventory states and depths, deferred validations,
-   backlog). A session is not closed until it reflects the actual
-   system state.
+8. Document decisions and the final configuration: premises → README,
+   hardware facts → HARDWARE.md, open questions → STATUS.md backlog. A session is not closed until it reflects the actual system state.
 
 Components may land at basic depth and be deepened in a later session;
 record the depth reached. The only step that must never be postponed is
