@@ -1,8 +1,8 @@
 # AGENTS.md — Operating guide for AI agents
 
 How any AI agent must behave while working in this repository.
-For project requirements and rationale, read SPECS.md first — it is the
-source of truth. If this file and SPECS.md conflict, SPECS.md wins.
+For project requirements and rationale, read README.md first — it is the
+source of truth. If this file and README.md conflict, README.md wins.
 
 ## Project context
 
@@ -44,7 +44,7 @@ source of truth. If this file and SPECS.md conflict, SPECS.md wins.
   templates; never hard-code color values in application configs.
 - No premature complexity or automation. Automated theme switching is
   explicitly out of scope for the initial phase.
-- Component choices are premises recorded in SPECS.md §3. Introduce or
+- Component choices are premises recorded in README.md §3. Introduce or
   change tools only through an approved, documented decision; open choices
   live in the STATUS.md decision backlog.
 
@@ -73,7 +73,7 @@ the STATUS.md update.
 
 Target layout (files appear when the project needs them):
 
-- `SPECS.md` — project requirements; source of truth.
+- `README.md` — project requirements; source of truth.
 - `AGENTS.md` — this guide.
 - `STATUS.md` — lightweight progress log (see below).
 - `HARDWARE.md` — verified hardware inventory and base-system baseline
@@ -104,9 +104,9 @@ Reproducibility rules:
   deep — plus constraints), the deferred-validations registry, the
   decisions log, and the decision backlog. Keep it short — it exists so
   any future session or model can pick up where the last one stopped.
-- Tool choices are premises in SPECS.md §3; STATUS.md tracks state only.
+- Tool choices are premises in README.md; STATUS.md tracks state only.
   An open choice is a backlog row until decided; once decided, it
-  graduates to the SPECS.md premises table via a decision entry.
+  graduates to the README.md premises table via a decision entry.
 - It is the single home for open items (deferred validations, decision
   backlog); reference documents (e.g., HARDWARE.md) do not carry TODO
   lists.

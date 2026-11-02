@@ -3,26 +3,26 @@
 Dell XPS 13 9350 as actually detected on 2026-10-31 through read-only
 inspection (no changes were made to the system). This is reference data
 for hardware-dependent decisions; update it when the system or hardware
-changes. Requirements live in SPECS.md; progress, pending tasks and deferred
+changes. Requirements live in README.md; progress, pending tasks and deferred
 decisions live in STATUS.md.
 
 ## Hardware inventory
 
-| Component | Detected | Driver / status |
-|---|---|---|
-| CPU | Intel Core i7-6500U (Skylake-U, 2C/4T, 400 MHz–3.1 GHz, VT-x, 4 MiB L3) | intel_pstate + HWP, governor `powersave` |
-| RAM | 16 GiB | OK |
-| GPU | Intel HD Graphics 520 [8086:1916] | i915, KMS active |
-| Display | eDP-1, 3200x1800 (QHD+, ~276 PPI, 13.3") | connected; `intel_backlight` present |
-| Touchscreen | ELAN digitizer (USB) | present (occasional use) |
-| Storage | Samsung PM951 NVMe 512 GB, fw BXV76D0Q (476.9 GiB) | nvme |
-| Wi-Fi | Broadcom BCM4350 = Dell Wireless 1820 [14e4:43a3] | brcmfmac, working |
-| Bluetooth | BCM2045A0 (USB) | btusb, hci0 up, rfkill clear |
-| Audio | Realtek ALC3246 (HDA) + Intel HDMI codec | snd_hda_intel |
-| Card reader | Realtek RTS525A PCIe microSD | rtsx_pci; not yet tested |
-| Webcam | Integrated_Webcam_HD (USB) | not yet tested |
-| Battery | BAT0, 56 Wh nominal (7.368 Ah) | firmware reports 100% health, 0 cycles (likely replaced) |
-| Thermals | 25–40 °C across zones at idle | healthy |
+| Component   | Detected                                                                | Driver / status                                          |
+| ----------- | ----------------------------------------------------------------------- | -------------------------------------------------------- |
+| CPU         | Intel Core i7-6500U (Skylake-U, 2C/4T, 400 MHz–3.1 GHz, VT-x, 4 MiB L3) | intel_pstate + HWP, governor `powersave`                 |
+| RAM         | 16 GiB                                                                  | OK                                                       |
+| GPU         | Intel HD Graphics 520 [8086:1916]                                       | i915, KMS active                                         |
+| Display     | eDP-1, 3200x1800 (QHD+, ~276 PPI, 13.3")                                | connected; `intel_backlight` present                     |
+| Touchscreen | ELAN digitizer (USB)                                                    | present (occasional use)                                 |
+| Storage     | Samsung PM951 NVMe 512 GB, fw BXV76D0Q (476.9 GiB)                      | nvme                                                     |
+| Wi-Fi       | Broadcom BCM4350 = Dell Wireless 1820 [14e4:43a3]                       | brcmfmac, working                                        |
+| Bluetooth   | BCM2045A0 (USB)                                                         | btusb, hci0 up, rfkill clear                             |
+| Audio       | Realtek ALC3246 (HDA) + Intel HDMI codec                                | snd_hda_intel                                            |
+| Card reader | Realtek RTS525A PCIe microSD                                            | rtsx_pci; not yet tested                                 |
+| Webcam      | Integrated_Webcam_HD (USB)                                              | not yet tested                                           |
+| Battery     | BAT0, 56 Wh nominal (7.368 Ah)                                          | firmware reports 100% health, 0 cycles (likely replaced) |
+| Thermals    | 25–40 °C across zones at idle                                           | healthy                                                  |
 
 Not present: fingerprint reader, Thunderbolt controller (not listed by
 lspci — absent in this SKU or disabled in BIOS). No Ethernet port; the
