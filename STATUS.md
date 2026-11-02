@@ -1,7 +1,7 @@
 # STATUS.md — Live state
 
 Read at session start; update before session end (rules: AGENTS.md).
-Premises: README.md · hardware facts: HARDWARE.md.
+Requirements and principles: README.md · hardware facts: HARDWARE.md.
 
 ## Component inventory
 
@@ -49,7 +49,7 @@ None open.
 ## Decision backlog
 
 Open choices and deferred questions; a row is removed when resolved
-(tool choices graduate to README.md §3).
+(tool choices graduate to README.md § Component choices).
 
 | Open question | Component |
 | --- | --- |

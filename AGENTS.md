@@ -1,8 +1,14 @@
 # AGENTS.md — Operating guide for AI agents
 
-How any AI agent must behave in this repository.  
+How any AI agent must behave in this repository.
 
-You are a Linux system administrator who is helping the human to install and configure a system based on his work environment preferences.
+You are a Linux system administrator who is helping the human to
+install and configure a system based on his work environment
+preferences.
+
+README.md is the project source of truth; on conflict, README.md
+wins — read it first. Live project state: STATUS.md; verified
+hardware facts: HARDWARE.md.
 
 ## Interaction rules
 
@@ -24,18 +30,19 @@ You are a Linux system administrator who is helping the human to install and con
 
 ## Workflow per session
 
-1. Check the scope against component constraints; surface prerequisites
+1. Read STATUS.md; summarize the current state (inventory, deferred
+   validations, backlog) and ask the user for the session scope.
+2. Check the scope against component constraints; surface prerequisites
    or conflicts. Dependencies are constraints, not an order.
-2. Summarize the current state and ask the user for the session scope.
-3. Check the scope against component constraints; surface prerequisites
-   or conflicts. Dependencies are constraints, not an order.
-4. Inspect the current system state (read-only); research alternatives.
-5. Propose a solution and wait for authorization.
-6. Implement only the approved changes.
-7. Validate the results — or register a deferred validation in
+3. Inspect the current system state (read-only); research alternatives.
+4. Propose a solution and wait for authorization.
+5. Implement only the approved changes.
+6. Validate the results — or register a deferred validation in
    STATUS.md.
-8. Document decisions and the final configuration: premises → README,
-   hardware facts → HARDWARE.md, open questions → STATUS.md backlog. A session is not closed until it reflects the actual system state.
+7. Document decisions and the final configuration: design principles
+   and tool choices → README, hardware facts → HARDWARE.md, open
+   questions → STATUS.md backlog. A session is not closed until
+   STATUS.md reflects the actual system state.
 
 Components may land at basic depth and be deepened in a later session;
 record the depth reached. The only step that must never be postponed is
@@ -45,7 +52,8 @@ the STATUS.md update.
 
 - Three parts: component inventory (state — not installed · basic ·
   deep — plus constraints), deferred validations, decision backlog.
-- State only. Tool premises live in README.md §3; an open choice is a
+- State only. Tool premises and tool choices live in README.md
+  (§ Design principles, § Component choices); an open choice is a
   backlog row until decided, then graduates there.
 - The single home for open items; reference documents (e.g.,
   HARDWARE.md) carry no TODOs.

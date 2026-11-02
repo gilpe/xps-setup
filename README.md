@@ -4,7 +4,7 @@
 
 Progressively configure a personal Arch Linux workstation into a
 functional, lightweight, visually consistent, maintainable, and
-reasonably reproducible environment tailored to the user's needs.  
+reasonably reproducible environment tailored to the user's needs.
 
 OpenCode AI models assist as technical helpers across one or many
 sessions, possibly different models; the user defines each session's
@@ -14,7 +14,7 @@ scope and creates all commits.
 
 Dell XPS 13 9350 (Intel Core i7-6500U, 16 GB RAM, QHD+ 3200x1800),
 vanilla Arch Linux. Verified hardware facts and base-system baseline:
-`HARDWARE.md`.  
+`HARDWARE.md`.
 
 ## 3. Design principles
 
@@ -24,8 +24,11 @@ vanilla Arch Linux. Verified hardware facts and base-system baseline:
   marginal visual gains at the cost of responsiveness or stability.
 - **Tools** — TUI first; GUI when it offers clear advantages;
   Wayland/Hyprland compatible by default.
-- **Visual consistency** — one color source: the matugen scheme (§4).
+- **Visual consistency** — one color source: the matugen scheme
+  (§ Visual identity).
 - **Maintainability** — configs easy to understand and modify manually.
+- **Deliberate growth** — no premature complexity or automation
+  without an established, concrete need.
 
 ## 4. Component choices
 
@@ -52,12 +55,11 @@ decided, then graduate here):
 ## 5. Visual identity
 
 matugen generates a Material You scheme from the current wallpaper —
-the single color source.  
+the single color source. Every component consumes it through matugen
+templates; application configs never hard-code color values.
 
-Every component consumes it through matugen templates; application configs never hard-code color values.  
-
-Dark scheme by default; automated dark/light switching is out of scope for
-the initial phase.
+Dark scheme by default; automated dark/light switching is out of scope
+for the initial phase.
 
 ## 6. Repo layout
 
@@ -75,19 +77,22 @@ Target layout (files appear when the project needs them):
 
 ## 7. Working rules
 
-- Session-driven, no fixed roadmap: the user sets each session's scope —
-new components, deepening existing ones, or as much as desired.  
-- Component dependencies are constraints, not a sequence. Components may land at
-**basic** depth (installed, minimal usable configuration) and be
-deepened later (**deep**: theming, keybinds, full integration).
+- Session-driven, no fixed roadmap: the user sets each session's
+  scope — new components, deepening existing ones, or as much as
+  desired.
+- Component dependencies are constraints, not a sequence. Components
+  may land at **basic** depth (installed, minimal usable configuration)
+  and be deepened later (**deep**: theming, keybinds, full
+  integration).
 - `STATUS.md` records the state and depth reached.
 - System changes belong in `install.sh`; application configuration in
   `dotfiles/` — never mixed.
-- A system change applied during a session is captured in `install.sh` in the same change set; a manual change.
-  missing from the script is a bug.
+- A system change applied during a session is captured in `install.sh`
+  in the same change set; a manual change missing from the script is a
+  bug.
 - Keep `install.sh` simple, readable, and safe to re-run when practical.
 - Document required packages, services, and inter-component
   dependencies as they are introduced.
 - Never include secrets or personal data in shared configuration.
 - Version control: the agent prepares changes in the working tree; the
-user reviews, validates, and creates all commits.  
+  user reviews, validates, and creates all commits.
