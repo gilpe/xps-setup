@@ -24,8 +24,10 @@ packages=(
     github-cli   # GitHub CLI: git auth over HTTPS (gh auth login)
     git          # Version control (previously installed by hand)
     opencode     # AI coding agent driving this project (same)
+    stow         # Dotfiles deployment: symlinks packages into $HOME (README § Repo layout)
+    ghostty      # Terminal emulator — Wayland-native GTK4 (README § Component choices)
 )
 
-pacman -S --needed --noconfirm "${packages[@]}"
+pacman -Syu --needed --noconfirm "${packages[@]}"
 
 echo "install.sh: done."

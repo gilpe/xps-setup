@@ -32,7 +32,7 @@ Not present: fingerprint reader, Thunderbolt, Ethernet port (Wi-Fi only).
 - Boot loader: rEFInd on the ESP (/dev/nvme0n1p1, 1 GiB, mounted at /boot with restrictive masks; refind.conf requires root to read and has not been inspected). One stale NVRAM boot entry (0x0000) points to a partition that no longer exists.
 - Kernel command line: `root=/dev/ArchinstallVg/root zswap.enabled=0 rw
   rootfstype=ext4 initrd=\initramfs-linux.img`.
-- Kernel `linux` 7.2.11-arch1-1 — the only kernel installed, no linux-lts fallback. intel-ucode loaded (0xf0, latest). CPU vulnerability mitigations active; "Gather data sampling: no microcode" is expected on Skylake (no fix exists).
+- Kernel `linux` 7.2.14-arch1-1 — the only kernel installed, no linux-lts fallback. Upgraded from 7.2.11 on 2026-11-03 via install.sh. intel-ucode loaded (0xf0, latest). CPU vulnerability mitigations active; "Gather data sampling: no microcode" is expected on Skylake (no fix exists).
 - Boot time ~20 s: firmware 7.7 s + loader 6.5 s (rEFInd menu; reducible, tiny text on the QHD panel) + kernel 2.5 s + userspace 3.4 s.
 
 ## Storage layout

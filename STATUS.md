@@ -8,12 +8,13 @@ Requirements and principles: README.md · hardware facts: HARDWARE.md.
 
 States: not installed · basic (installed, minimal usable configuration) · deep (fully configured).
 
-Flat and unordered — the user picks each session's scope; dependencies are constraints, not a sequence.  
+Ordered by progress: completed components first (completion order), the current session scope right after them (marked ▶), the rest flat and unordered — dependencies are constraints, not a sequence.  
 
 | Component                                                             | State         | Constraints/Notes                                                                                                                 |
 | --------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| Dotfiles deployment (GNU stow)                                        | basic         | [extra]; deploys dotfiles/ into $HOME: stow -d dotfiles -t ~ <package>                                                            |
+| Terminal (ghostty)                                                    | basic         | [extra]; config deployed via stow (dotfiles/ghostty); embedded Nerd Font also serves superfile                                    |
 | Compositor (Hyprland)                                                 | not installed | launched from TTY; a usable session also needs a terminal; basic touch support; unblocks visual validation of every GUI component |
-| Terminal (ghostty)                                                    | not installed | [extra]; embedded Nerd Font also serves superfile; visual check deferred until the compositor runs                                |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
 | Status bar (waybar)                                                   | not installed | needs compositor                                                                                                                  |
 | App launcher (fuzzel)                                                 | not installed | needs compositor                                                                                                                  |
@@ -45,7 +46,9 @@ Flat and unordered — the user picks each session's scope; dependencies are con
 Rows are added when a component lands but cannot be fully validated
 yet; the session that lands the unblocking component closes the row.
 
-None open.
+| Deferred validation                                                 | Component                         | Closes when                       |
+| ------------------------------------------------------------------- | --------------------------------- | --------------------------------- |
+| ghostty visual check — rendering, font size on the 3200x1800 panel  | Terminal (ghostty)                | Compositor (Hyprland) lands       |
 
 ## Decision backlog
 

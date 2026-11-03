@@ -1,0 +1,10 @@
+# ghostty configuration — basic depth.
+#
+# Colors are deliberately absent: matugen is the single color source and
+# will template this file when the color system lands (README § Visual
+# identity). Visual tuning (font size on the 3200x1800 panel) is deferred
+# until the compositor runs (STATUS deferred validations).
+
+# HiDPI panel: kept explicit although it equals the 1.4.0 default;
+# tune at the visual check once the compositor runs.
+font-size = 12
