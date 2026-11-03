@@ -15,7 +15,7 @@ Ordered by progress: completed components first (completion order), the current 
 | Dotfiles deployment (GNU stow)                                        | basic         | [extra]; deploy.sh stows all dotfiles/ packages into $HOME (README § Repo layout)                                                 |
 | Terminal (ghostty)                                                    | basic         | [extra]; config deployed via stow (dotfiles/ghostty); embedded Nerd Font also serves superfile                                    |
 | Git TUI (lazygit)                                                     | basic         | [extra]; defaults only — editor (Neovim) and colors (matugen) deferred to deep                                                    |
-| Compositor (Hyprland)                                                 | not installed | launched from TTY; a usable session also needs a terminal; basic touch support; unblocks visual validation of every GUI component |
+| Compositor (Hyprland)                                                 | basic         | [extra]; modular Lua config (dotfiles/hypr); scale 1.6 — 1.5 snaps, integer-logical scales apply; touch OOTB; colors → matugen    |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
 | Status bar (waybar)                                                   | not installed | needs compositor                                                                                                                  |
 | App launcher (fuzzel)                                                 | not installed | needs compositor                                                                                                                  |
@@ -47,9 +47,7 @@ Ordered by progress: completed components first (completion order), the current 
 Rows are added when a component lands but cannot be fully validated
 yet; the session that lands the unblocking component closes the row.
 
-| Deferred validation                                                 | Component                         | Closes when                       |
-| ------------------------------------------------------------------- | --------------------------------- | --------------------------------- |
-| ghostty visual check — rendering, font size on the 3200x1800 panel  | Terminal (ghostty)                | Compositor (Hyprland) lands       |
+None open.
 
 ## Decision backlog
 

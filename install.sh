@@ -27,6 +27,11 @@ packages=(
     stow         # Dotfiles deployment: symlinks packages into $HOME (README § Repo layout)
     ghostty      # Terminal emulator — Wayland-native GTK4 (README § Component choices)
     lazygit      # Git TUI — review, stage, commit (README § Component choices)
+    hyprland     # Compositor — Wayland (README § Component choices)
+    hyprpolkitagent # Polkit authentication agent for the graphical session
+    xdg-desktop-portal-hyprland # XDG portal backend: screencast via PipeWire
+    xdg-desktop-portal-gtk # XDG portal backend: file dialogs for GTK apps
+    brightnessctl # Brightness keys — used by the stock Hyprland binds
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
