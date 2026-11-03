@@ -55,6 +55,7 @@ Target layout (files appear when the project needs them):
 - `STATUS.md` — live state: component inventory, deferred validations, decision backlog.
 - `HARDWARE.md` — verified hardware facts and base-system baseline.
 - `install.sh` — system provisioning: packages (official repos and AUR), AUR helper setup, services, required system file changes.
+- `deploy.sh` — user-level dotfiles deployment: stows every package in `dotfiles/` into `$HOME`. Companion to `install.sh`; run it without sudo.
 - `dotfiles/` — application configuration, organized by application, reusable on other machines.
 
 ## 7. Working rules

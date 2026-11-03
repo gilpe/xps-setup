@@ -12,7 +12,7 @@ Ordered by progress: completed components first (completion order), the current 
 
 | Component                                                             | State         | Constraints/Notes                                                                                                                 |
 | --------------------------------------------------------------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| Dotfiles deployment (GNU stow)                                        | basic         | [extra]; deploys dotfiles/ into $HOME: stow -d dotfiles -t ~ <package>                                                            |
+| Dotfiles deployment (GNU stow)                                        | basic         | [extra]; deploy.sh stows all dotfiles/ packages into $HOME (README § Repo layout)                                                 |
 | Terminal (ghostty)                                                    | basic         | [extra]; config deployed via stow (dotfiles/ghostty); embedded Nerd Font also serves superfile                                    |
 | Compositor (Hyprland)                                                 | not installed | launched from TTY; a usable session also needs a terminal; basic touch support; unblocks visual validation of every GUI component |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
