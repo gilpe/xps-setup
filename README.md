@@ -27,6 +27,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | -------------------- | ------------------------------------------------------- |
 | Dotfiles deployment  | GNU Stow                                                |
 | Terminal emulator    | ghostty                                                 |
+| Git TUI              | lazygit                                                 |
 | Compositor           | Hyprland                                                |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |

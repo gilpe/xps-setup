@@ -26,6 +26,7 @@ packages=(
     opencode     # AI coding agent driving this project (same)
     stow         # Dotfiles deployment: symlinks packages into $HOME (README § Repo layout)
     ghostty      # Terminal emulator — Wayland-native GTK4 (README § Component choices)
+    lazygit      # Git TUI — review, stage, commit (README § Component choices)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
