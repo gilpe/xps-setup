@@ -25,8 +25,9 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 
 | Component            | Choice                                                  |
 | -------------------- | ------------------------------------------------------- |
-| Compositor           | Hyprland                                                |
+| Dotfiles deployment  | GNU Stow                                                |
 | Terminal emulator    | ghostty                                                 |
+| Compositor           | Hyprland                                                |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
 | App launcher         | fuzzel                                                  |
@@ -54,7 +55,7 @@ Target layout (files appear when the project needs them):
 - `STATUS.md` — live state: component inventory, deferred validations, decision backlog.
 - `HARDWARE.md` — verified hardware facts and base-system baseline.
 - `install.sh` — system provisioning: packages (official repos and AUR), AUR helper setup, services, required system file changes.
-- `dotfiles/` — application configuration, organized by application, reusable on other machines. Deployed with GNU stow: each package mirrors its full path under `$HOME` (e.g. `ghostty/.config/ghostty/config`); deploy with `stow -d dotfiles -t ~ <package>` from the repo root.
+- `dotfiles/` — application configuration, organized by application, reusable on other machines.
 
 ## 7. Working rules
 
