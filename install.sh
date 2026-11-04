@@ -32,8 +32,18 @@ packages=(
     xdg-desktop-portal-hyprland # XDG portal backend: screencast via PipeWire
     xdg-desktop-portal-gtk # XDG portal backend: file dialogs for GTK apps
     brightnessctl # Brightness keys — used by the stock Hyprland binds
+    terminus-font # HiDPI console font — ter-128n (README § Component choices)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
+
+# HiDPI console font: default8x16 is unreadable at ~276 PPI (HARDWARE.md).
+# Applies immediately and at boot; affects every VT, not just a greeter.
+if grep -q '^FONT=' /etc/vconsole.conf; then
+    sed -i 's/^FONT=.*/FONT=ter-128n/' /etc/vconsole.conf
+else
+    echo 'FONT=ter-128n' >> /etc/vconsole.conf
+fi
+systemctl restart systemd-vconsole-setup.service
 
 echo "install.sh: done."

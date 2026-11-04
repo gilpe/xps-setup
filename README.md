@@ -29,6 +29,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Terminal emulator    | ghostty                                                 |
 | Git TUI              | lazygit                                                 |
 | Compositor           | Hyprland                                                |
+| Console font         | Terminus (ter-128n)                                     |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
 | App launcher         | fuzzel                                                  |

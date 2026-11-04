@@ -16,6 +16,7 @@ Ordered by progress: completed components first (completion order), the current 
 | Terminal (ghostty)                                                    | basic         | [extra]; config deployed via stow (dotfiles/ghostty); embedded Nerd Font also serves superfile                                    |
 | Git TUI (lazygit)                                                     | basic         | [extra]; defaults only — editor (Neovim) and colors (matugen) deferred to deep                                                    |
 | Compositor (Hyprland)                                                 | basic         | [extra]; modular Lua config (dotfiles/hypr); scale 1.6 — 1.5 snaps, integer-logical scales apply; touch OOTB; colors → matugen    |
+| Console font (Terminus ter-128n)                                      | basic         | [extra]; FONT=ter-128n in /etc/vconsole.conf (install.sh, idempotent); every VT; validated live in VT2                            |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
 | Status bar (waybar)                                                   | not installed | needs compositor                                                                                                                  |
 | App launcher (fuzzel)                                                 | not installed | needs compositor                                                                                                                  |
@@ -35,7 +36,7 @@ Ordered by progress: completed components first (completion order), the current 
 | Bluetooth management (bluetuith)                                      | not installed | AUR → needs paru; pairing tests need hardware                                                                                     |
 | Audio (PipeWire validation + mixer + keys)                            | not installed | stack pre-installed; reduces to validation, mixer choice, and media keys via compositor keybinds                                  |
 | Peripherals and removable media (udisks2)                             | not installed | USB mounting without GUI; microSD reader and webcam tests                                                                         |
-| Login manager (greetd + tuigreet)                                     | not installed | install once the compositor is validated; HiDPI greeter font is a vconsole change → install.sh                                    |
+| Login manager (greetd + tuigreet)                                     | not installed | compositor validated — ready to land; greeter inherits the console font (separate component)                                      |
 | Power management                                                      | not installed | suspend coordinated with the lock/idle stack                                                                                      |
 | Appearance (GTK/Qt, cursors, icons, fonts)                            | not installed | consolidation; remaining matugen templates (e.g., gtk.css)                                                                        |
 | Boot polish and system resilience                                     | not installed | rEFInd menu timeout + HiDPI font; stale NVRAM entry (sudo needed); NetworkManager-wait-online; linux-lts fallback                 |
@@ -62,7 +63,7 @@ Open choices and deferred questions; a row is removed when resolved
 | Notifications daemon: mako vs. dunst                                | Notifications                     |
 | Lock/idle stack: hyprlock+hypridle vs. swaylock+swayidle            | Screen lock and idle              |
 | Audio mixer: pulsemixer (TUI) vs. pwvucontrol (GUI)                 | Audio                             |
-| Login manager: greetd + tuigreet (recommended) vs. ly               | Login manager                     |
+| Login manager: greetd+agreety basic → tuigreet deep (AUR-only)      | Login manager                     |
 | Disable NetworkManager-wait-online?                                 | Boot polish and system resilience |
 | rEFInd menu timeout and HiDPI font                                  | Boot polish and system resilience |
 | Add a linux-lts fallback kernel?                                    | Boot polish and system resilience |
