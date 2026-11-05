@@ -41,7 +41,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Shell                | fish                                                    |
 | File manager         | superfile                                               |
 | AUR helper           | paru                                                    |
-| Wi-Fi management     | wlctl (NetworkManager backend; nmtui stays as fallback) |
+| Wi-Fi management     | wlctl (impala fork pointed at NetworkManager — impala proper is iwd-based and would force a stack migration; its doctor subcommand diagnoses the troublesome Broadcom; nmtui stays as fallback) |
 | Bluetooth management | bluetuith                                               |
 
 ## 5. Visual identity
