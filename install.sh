@@ -37,6 +37,7 @@ packages=(
     waybar   # Status bar — Wayland-native, GTK (README § Component choices)
     neovim   # Text editor — README § Component choices
     terminus-font # HiDPI console font — ter-128n (README § Component choices)
+    otf-geist-mono-nerd # Nerd Font: terminal + future non-terminal consumers (README § Component choices: Terminal font)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"

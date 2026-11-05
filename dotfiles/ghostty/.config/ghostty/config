@@ -2,9 +2,20 @@
 #
 # Colors are deliberately absent: matugen is the single color source and
 # will template this file when the color system lands (README § Visual
-# identity). Visual tuning (font size on the 3200x1800 panel) is deferred
-# until the compositor runs (STATUS deferred validations).
+# identity). Visual checks done at the Hyprland landing (eDP-1 scale 1.6).
+#
+# Font: explicit, not the default — ghostty's default font is an embedded
+# JetBrainsMono; our choice (README § Component choices: Terminal font,
+# landed 2026-11-05) is the system Geist Mono Nerd, so the same family
+# can serve non-terminal consumers later (waybar icons at the styling
+# session). font-size is live-tunable: ghostty auto-reloads on save.
 
-# HiDPI panel: kept explicit although it equals the 1.4.0 default;
-# tune at the visual check once the compositor runs.
+# Geographic note on ligatures: Geist ships programming ligatures
+# (--> === !== <= ...) but they are opt-in since upstream v1.7.0 —
+# they live in Stylistic Set 11 so they never ligate by accident
+# (e.g. " --flag " breaking monospace alignment). Enable them here.
+font-family = GeistMono Nerd Font
+font-feature = ss11
 font-size = 12
+
+# Geist Mono applied 2026-11-05 (session: STATUS fix + font choice).

@@ -30,6 +30,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Git TUI              | lazygit                                                 |
 | Compositor           | Hyprland                                                |
 | Console font         | Terminus (ter-128n)                                     |
+| Terminal font        | Geist Mono (Nerd, SS11 ligatures)                       |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
 | App launcher         | fuzzel                                                  |
