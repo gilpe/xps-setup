@@ -18,7 +18,10 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(programs.terminal))
 local closeWindowBind = hl.bind(mainMod .. " + C", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(programs.fileManager))
+-- fileManager (spf) is a TUI: it needs a terminal wrapper — ghostty's
+-- official -e flag runs a command inside the terminal, and a bare TUI
+-- exec from the compositor has no TTY and dies instantly.
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(programs.terminal .. " -e " .. programs.fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- [TWEAK] launcher on SUPER+SPACE (the stock SUPER+R changed away) —
 -- Space for muscle memory: the launcher is the most-used keybind here.

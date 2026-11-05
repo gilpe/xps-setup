@@ -2,7 +2,7 @@
 #
 # Colors are deliberately absent: matugen is the single color source and
 # will template this file when the color system lands (README § Visual
-# identity). Visual checks done at the Hyprland landing (eDP-1 scale 1.6).
+# identity). Visual checks done at the Hyprland landing (eDP-1 scale 2).
 #
 # Font: explicit, not the default — ghostty's default font is an embedded
 # JetBrainsMono; our choice (README § Component choices: Terminal font,

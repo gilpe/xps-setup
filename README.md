@@ -18,6 +18,7 @@ Dell XPS 13 9350 (Intel Core i7-6500U, 16 GB RAM, QHD+ 3200x1800), vanilla Arch 
 - **Visual consistency** — one color source: the matugen scheme (§ Visual identity).
 - **Maintainability** — configs easy to understand and modify manually.
 - **Deliberate growth** — no premature complexity or automation without an established, concrete need.
+- **Minimal home** — no default XDG user directories; `$HOME` stays clean and folders appear only when a concrete need does.
 
 ## 4. Component choices
 

@@ -12,7 +12,7 @@ README.md. Open questions: STATUS.md backlog.
 | CPU         | Intel Core i7-6500U (Skylake-U, 2C/4T, 400 MHz–3.1 GHz, VT-x, 4 MiB L3) | intel_pstate + HWP, governor `powersave`               |
 | RAM         | 16 GiB                                                                  | OK                                                     |
 | GPU         | Intel HD Graphics 520 [8086:1916]                                       | i915, KMS active                                       |
-| Display     | eDP-1, 3200x1800 (QHD+, ~276 PPI, 13.3")                                | connected; `intel_backlight`; needs fractional scaling |
+| Display     | eDP-1, 3200x1800 (QHD+, ~276 PPI, 13.3")                                | connected; `intel_backlight`; HiDPI — display scaling needed (integer scale 2 in use) |
 | Touchscreen | ELAN digitizer (USB)                                                    | present (occasional use)                               |
 | Storage     | Samsung PM951 NVMe 512 GB, fw BXV76D0Q (476.9 GiB)                      | nvme                                                   |
 | Wi-Fi       | Broadcom BCM4350 = Dell Wireless 1820 [14e4:43a3]                       | brcmfmac, working; historically troublesome — watch    |

@@ -1,10 +1,10 @@
--- Monitors — [TWEAK] eDP-1: HiDPI 3200x1800 panel, scale 1.6
--- (2000x1125 effective). 1.6, not the planned 1.5: on this panel a
--- configured 1.5 does not stick — the session ends up at 1.6, the
--- nearest scale with an integer logical size (3200/1.6 = 2000 exact,
--- 3200/1.5 = 2133.33), while integer-clean values like 2 apply as-is.
--- Verified live with hyprctl monitors. Tunable live: Hyprland reloads
--- this file on save.
+-- Monitors — [TWEAK] eDP-1: HiDPI 3200x1800 panel, scale 2
+-- (1600x900 effective; integer-clean values apply as-is). Scale story
+-- on this panel: a configured 1.5 did not stick — the session ended up
+-- at 1.6, the nearest scale with an integer logical size
+-- (3200/1.6 = 2000 exact, 3200/1.5 = 2133.33); the user later switched
+-- to the integer-clean 2. Verified live with hyprctl monitors. Tunable
+-- live: Hyprland reloads this file on save.
 -- Fields: https://wiki.hypr.land/configuring/core/monitors/
 
 hl.monitor({
