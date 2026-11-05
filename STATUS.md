@@ -16,7 +16,10 @@ Ordered by progress: completed components first (completion order), the current 
 | Terminal (ghostty)                                                    | basic         | [extra]; config deployed via stow (dotfiles/ghostty); embedded Nerd Font also serves superfile                                    |
 | Git TUI (lazygit)                                                     | basic         | [extra]; defaults only — editor (Neovim) and colors (matugen) deferred to deep                                                    |
 | Compositor (Hyprland)                                                 | basic         | [extra]; modular Lua config (dotfiles/hypr); scale 1.6 — 1.5 snaps, integer-logical scales apply; touch OOTB; colors → matugen    |
+| XDG portals (hyprland + gtk)                                          | basic         | [extra]; installed with the compositor; screencast and file-dialog paths not yet exercised (no GUI apps)                          |
+| Polkit agent (hyprpolkitagent)                                        | basic         | [extra]; running in the graphical session via Hyprland autostart (full binary path); validated                                    |
 | Console font (Terminus ter-128n)                                      | basic         | [extra]; FONT=ter-128n in /etc/vconsole.conf (install.sh, idempotent); every VT; validated live in VT2                            |
+| AUR helper (paru)                                                     | basic         | paru-bin 2.2.0 bootstrapped by install.sh (runuser delegation, idempotent); validated with a live AUR query                       |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
 | Status bar (waybar)                                                   | not installed | needs compositor                                                                                                                  |
 | App launcher (fuzzel)                                                 | not installed | needs compositor                                                                                                                  |
@@ -25,9 +28,6 @@ Ordered by progress: completed components first (completion order), the current 
 | Clipboard (wl-clipboard + cliphist)                                   | not installed | needs compositor                                                                                                                  |
 | Notifications (mako or dunst)                                         | not installed | needs compositor; daemon choice open                                                                                              |
 | Screen lock and idle (hyprlock+hypridle or swaylock+swayidle)         | not installed | needs compositor; stack choice open                                                                                               |
-| XDG portals (hyprland + gtk)                                          | not installed | needs compositor; screenshare and file dialogs                                                                                    |
-| Polkit agent (hyprpolkitagent)                                        | not installed | needs compositor                                                                                                                  |
-| AUR helper (paru)                                                     | not installed | bootstrap once manually, captured in install.sh; unblocks all AUR components                                                      |
 | Web browser (Brave)                                                   | not installed | AUR brave-bin → needs paru; native Wayland                                                                                        |
 | Text editor (Neovim)                                                  | not installed | —                                                                                                                                 |
 | Shell (fish)                                                          | not installed | login-shell change captured in install.sh                                                                                         |
@@ -63,7 +63,7 @@ Open choices and deferred questions; a row is removed when resolved
 | Notifications daemon: mako vs. dunst                                | Notifications                     |
 | Lock/idle stack: hyprlock+hypridle vs. swaylock+swayidle            | Screen lock and idle              |
 | Audio mixer: pulsemixer (TUI) vs. pwvucontrol (GUI)                 | Audio                             |
-| Login manager: greetd+agreety basic → tuigreet deep (AUR-only)      | Login manager                     |
+| Login manager greeter: tuigreet (now in [extra], was AUR-only) vs. agreety vs. ly | Login manager                     |
 | Disable NetworkManager-wait-online?                                 | Boot polish and system resilience |
 | rEFInd menu timeout and HiDPI font                                  | Boot polish and system resilience |
 | Add a linux-lts fallback kernel?                                    | Boot polish and system resilience |
