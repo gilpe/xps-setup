@@ -34,6 +34,7 @@ packages=(
     xdg-desktop-portal-gtk # XDG portal backend: file dialogs for GTK apps
     brightnessctl # Brightness keys — used by the stock Hyprland binds
     fuzzel   # App launcher — Wayland-native (README § Component choices)
+    waybar   # Status bar — Wayland-native, GTK (README § Component choices)
     terminus-font # HiDPI console font — ter-128n (README § Component choices)
 )
 

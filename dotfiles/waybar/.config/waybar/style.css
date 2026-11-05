@@ -1,0 +1,17 @@
+/* waybar style — layout/type only override.
+   Colors and layout are NOT redefined here: the packaged default style
+   is imported and kept wholesale until matugen generates this file
+   (README § Visual identity) — no duplicated theme definitions.
+   Absolute path: the packaged style lives wherever the waybar package
+   installed it, the dotfiles stay portable.
+   Type: Adwaita Sans matches the launcher (fuzzel); 15px over the
+   packaged default (13px) for readability at the eDP-1 fractional
+   scale, until the color pass revisits styling for good. */
+
+@import url("/etc/xdg/waybar/style.css");
+
+/* element#id out-specifies the packaged universal * selector */
+window#waybar * {
+    font-family: "Adwaita Sans";
+    font-size: 15px;
+}

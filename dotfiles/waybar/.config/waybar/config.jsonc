@@ -1,0 +1,40 @@
+// waybar — status bar (README § Component choices).
+// Basic depth: a small module set with plain-text formats (no Nerd Font
+// glyphs and no emoji — there is no icon font on the system yet; the
+// Appearance component will revisit).
+// Colors: deliberately no user style.css — waybar falls back to its
+// packaged default style (/etc/xdg/waybar/style.css) until matugen
+// generates one (README § Visual identity).
+{
+    "layer": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "pulseaudio", "battery", "tray"],
+
+    "hyprland/workspaces": {
+        "format": "{name}"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "{:%A, %d %B %Y}"
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname}",
+        "format-disconnected": "offline"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}%",
+        "format-muted": "muted"
+    },
+
+    "battery": {
+        "format": "{capacity}%",
+        "format-charging": "{capacity}% +"
+    },
+
+    "tray": {}
+}
