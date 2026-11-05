@@ -39,6 +39,7 @@ packages=(
     superfile # File manager TUI — README § Component choices (binary is spf)
     terminus-font # HiDPI console font — ter-128n (README § Component choices)
     otf-geist-mono-nerd # Nerd Font: terminal + future non-terminal consumers (README § Component choices: Terminal font)
+    wiremix # Audio mixer TUI — PipeWire-native, no PA compat layer (README § Component choices: Audio mixer)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
