@@ -1,9 +1,9 @@
 -- Programs — [TWEAK] our component choices (README § Component choices).
--- superfile and fuzzel are pending install; their binds stay inert until
--- they land.
+-- fuzzel is live; superfile still pending — its bind stays inert until
+-- it lands.
 
 return {
     terminal    = "ghostty",
     fileManager = "superfile",   -- pending install
-    menu        = "fuzzel",      -- pending install
+    menu        = "fuzzel",
 }
