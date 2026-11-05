@@ -35,6 +35,7 @@ packages=(
     brightnessctl # Brightness keys — used by the stock Hyprland binds
     fuzzel   # App launcher — Wayland-native (README § Component choices)
     waybar   # Status bar — Wayland-native, GTK (README § Component choices)
+    neovim   # Text editor — README § Component choices
     terminus-font # HiDPI console font — ter-128n (README § Component choices)
 )
 
@@ -74,6 +75,15 @@ if ((${#aur_packages[@]})); then
     [[ -n "${SUDO_USER:-}" ]] || { echo "error: AUR installs need SUDO_USER; run via sudo" >&2; exit 1; }
     command -v paru >/dev/null || { echo "error: paru not found — run the bootstrap above first" >&2; exit 1; }
     runuser -u "$SUDO_USER" -- paru -S --needed --noconfirm "${aur_packages[@]}"
+fi
+
+# Git: Neovim as the editor — lazygit and the git CLI pick it up from
+# core.editor. User-level: writes to the personal ~/.gitconfig (identity
+# and credentials stay out of the repo, README § Working rules).
+if [[ -n "${SUDO_USER:-}" ]]; then
+    runuser -u "$SUDO_USER" -- git config --global core.editor nvim
+else
+    echo "warning: no SUDO_USER — set git core.editor manually" >&2
 fi
 
 echo "install.sh: done."
