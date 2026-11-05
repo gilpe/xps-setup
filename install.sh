@@ -62,4 +62,16 @@ if ! command -v paru >/dev/null; then
     rm -rf "$work"
 fi
 
+# AUR packages — built and installed through paru as the invoking user
+# (makepkg refuses root; paru's internal sudo handles the root install,
+# covered by the sudo timestamp of this same tty). Idempotent via --needed.
+aur_packages=(
+    brave-bin # Web browser — Chromium engine, built-in shields (README § Component choices)
+)
+if ((${#aur_packages[@]})); then
+    [[ -n "${SUDO_USER:-}" ]] || { echo "error: AUR installs need SUDO_USER; run via sudo" >&2; exit 1; }
+    command -v paru >/dev/null || { echo "error: paru not found — run the bootstrap above first" >&2; exit 1; }
+    runuser -u "$SUDO_USER" -- paru -S --needed --noconfirm "${aur_packages[@]}"
+fi
+
 echo "install.sh: done."
