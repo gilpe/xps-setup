@@ -14,6 +14,7 @@ README.md. Open questions: STATUS.md backlog.
 | GPU         | Intel HD Graphics 520 [8086:1916]                                       | i915, KMS active                                       |
 | Display     | eDP-1, 3200x1800 (QHD+, ~276 PPI, 13.3")                                | connected; `intel_backlight`; HiDPI — display scaling needed (integer scale 2 in use) |
 | Touchscreen | ELAN digitizer (USB)                                                    | present (occasional use)                               |
+| Keyboard    | Built-in; Fn row doubles as media keys by default: F1 mute, F2/F3 vol-./+, F4/F5/F6 prev/play-pause/next, F9 search, F10 kbd backlight, F11/F12 brightness-./+ — kbd backlight LED dell::kbd_backlight (levels 0-2) | media keys validated live (F1-F6, F11/F12 single-fire — Fn row emits no repeat events); F9/F10 image not bound and not yet exercised |
 | Storage     | Samsung PM951 NVMe 512 GB, fw BXV76D0Q (476.9 GiB)                      | nvme                                                   |
 | Wi-Fi       | Broadcom BCM4350 = Dell Wireless 1820 [14e4:43a3]                       | brcmfmac, working; historically troublesome — watch    |
 | Bluetooth   | BCM2045A0 (USB)                                                         | btusb, hci0 up, rfkill clear                           |
