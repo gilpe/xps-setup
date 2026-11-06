@@ -61,3 +61,13 @@ hl.window_rule({
     float = true,
     size  = "622 652",
 })
+
+-- App launcher: fsel TUI opens with --class=appicker (SUPER+SPACE).
+-- Same floating-picker pattern as the clipboard picker above.
+hl.window_rule({
+    name  = "app-launcher",
+    match = { class = "appicker" },
+
+    float = true,
+    size  = "622 652",
+})

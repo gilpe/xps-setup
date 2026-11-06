@@ -81,6 +81,7 @@ fi
 aur_packages=(
     brave-bin # Web browser — Chromium engine, built-in shields (README § Component choices)
     wlctl-bin # Wi-Fi TUI — impala fork pointed at NetworkManager (README § Component choices)
+    fsel-bin  # App launcher TUI — floating ghostty picker (README § Component choices: App launcher)
 )
 if ((${#aur_packages[@]})); then
     [[ -n "${SUDO_USER:-}" ]] || { echo "error: AUR installs need SUDO_USER; run via sudo" >&2; exit 1; }

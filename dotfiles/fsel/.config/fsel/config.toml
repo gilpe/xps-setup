@@ -1,0 +1,9 @@
+# fsel config — launcher TUI (README § Component choices: App launcher).
+#
+# Minimal: only what the stock default gets wrong here (fuzzel.ini
+# philosophy). Colors are not set: fsel reads the terminal palette —
+# matugen will own the terminal colors, not a duplicate here.
+#
+# Default is "kitty -e"; kitty is not installed. This is how apps with
+# Terminal=true are started by fsel.
+terminal_launcher = "ghostty -e"
