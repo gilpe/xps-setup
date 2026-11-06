@@ -26,6 +26,17 @@ hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 -- [TWEAK] launcher on SUPER+SPACE (the stock SUPER+R changed away) —
 -- Space for muscle memory: the launcher is the most-used keybind here.
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(programs.menu))
+
+-- [TWEAK] Clipboard history picker (wl-clipboard + cliphist + fzf —
+-- README § Design principles: Tools): a ghostty window of class
+-- "clipicker" (float+size rule in conf/rules.lua) runs the pipeline —
+-- cliphist list feeds fzf, the decoded selection goes back to
+-- wl-copy. The pipeline IS the terminal's process: picking in fzf
+-- copies and the window closes by itself. SUPER+H verified free
+-- (0 binds in conf/ and in live `hyprctl binds`).
+hl.bind(mainMod .. " + H", hl.dsp.exec_cmd(
+    "ghostty --class=clipicker -e sh -c 'cliphist list | fzf --no-sort | cliphist decode | wl-copy'"
+))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 

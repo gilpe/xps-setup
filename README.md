@@ -14,7 +14,7 @@ Dell XPS 13 9350 (Intel Core i7-6500U, 16 GB RAM, QHD+ 3200x1800), vanilla Arch 
 
 - **Simplicity** — explicit, understandable configs; no unnecessary abstractions, layers, or dependencies.
 - **Performance** — lightweight components suited to this hardware; no marginal visual gains at the cost of responsiveness or stability.
-- **Tools** — TUI first; GUI when it offers clear advantages; Wayland/Hyprland compatible by default.
+- **Tools** — TUI first; GUI when it offers clear advantages; Wayland/Hyprland compatible by default. Prefer consolidated, lightweight, reliable, pipe-friendly backends with a TUI frontend composed on top (e.g. wl-clipboard + cliphist + fzf) over all-in-one tools — the backend stays solid, the frontend stays swappable.
 - **Visual consistency** — one color source: the matugen scheme (§ Visual identity).
 - **Maintainability** — configs easy to understand and modify manually.
 - **Deliberate growth** — no premature complexity or automation without an established, concrete need.

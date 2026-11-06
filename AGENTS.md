@@ -44,3 +44,4 @@ Components may land at basic depth and be deepened in a later session; record th
 - Don't duplicate color or theme definitions.
 - Don't add automation without an established, concrete need.
 - Don't make undocumented manual changes.
+- Don't pre-name the tool in a not-installed STATUS row — name the need; the tool enters when the choice is made on the table (alternatives evaluated).

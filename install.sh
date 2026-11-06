@@ -44,6 +44,9 @@ packages=(
     btop    # System monitor TUI — all-in-one dashboard (README § Component choices: System monitor)
     fastfetch # System info TUI — terminal snapshot (README § Component choices: System info)
     ncdu    # Disk usage analyzer TUI — with delete confirmation (README § Component choices)
+    wl-clipboard # Wayland clipboard primitives (wl-copy/wl-paste) — backend of the clipboard stack
+    cliphist # Clipboard history store (watches wl-clipboard; binary db, text+images)
+    fzf     # TUI fuzzy finder — picker frontend of the clipboard stack (README § Design principles: Tools)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"

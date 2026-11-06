@@ -28,7 +28,7 @@ Ordered by progress: completed components first (completion order), the current 
 | File manager (superfile)                                              | basic         | [extra] 1.6.0; binary is spf — SUPER+E opens it in a ghostty window (TUI: needs terminal -e wrapper; bare TUI exec has no TTY and dies instantly); validated live (SUPER+E); defaults only — config → deep session if needed; icons served by the Terminal font; colors → matugen |
 | Color system (matugen)                                                | not installed | [extra]; needs a wallpaper as scheme source; retrofits apps via templates                                                         |
 | Wallpaper (awww)                                                      | not installed | AUR awww-git (lands via paru — available); switch wired to matugen regeneration                                                   |
-| Screenshots (grim + slurp)                                            | not installed | ready to land — compositor basic; also documents validations                                                                      |
+| Screen capture                                                        | not installed | deferred by sequencing decision: clipboard + notifications land first, then the capture layer arrives with its integration value complete (copy-to-clipboard + save notification); grim+slurp primitives are the engine either way (won the evaluation table: composables [extra], zero deps); evaluates again that day against a Hyprland wrapper (hyprshot — its runtime deps are exactly the two enabling components); annotation deep candidate: satty (zero new deps — gtk4/libadwaita already present); also documents validations |
 | Clipboard (wl-clipboard + cliphist)                                   | not installed | ready to land — compositor basic                                                                                                  |
 | Notifications (mako or dunst)                                         | not installed | ready to land — compositor basic; daemon choice open (backlog)                                                                    |
 | Screen lock and idle (hyprlock+hypridle or swaylock+swayidle)         | not installed | ready to land — compositor basic; stack choice open (backlog)                                                                     |
@@ -66,6 +66,7 @@ Open choices and deferred questions; a row is removed when resolved
 | power-profiles-daemon vs. TLP                                       | Power management                  |
 | Notifications daemon: mako vs. dunst                                | Notifications                     |
 | Lock/idle stack: hyprlock+hypridle vs. swaylock+swayidle            | Screen lock and idle              |
+| Launcher frontend: TUI (fzf in a floating terminal) vs. fuzzel — per the backend/TUI-frontend principle | App launcher                      |
 | Login manager greeter: tuigreet (now in [extra], was AUR-only) vs. agreety vs. ly | Login manager                     |
 | Disable NetworkManager-wait-online?                                 | Boot polish and system resilience |
 | rEFInd menu timeout and HiDPI font                                  | Boot polish and system resilience |
