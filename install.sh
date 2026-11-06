@@ -34,7 +34,6 @@ packages=(
     xdg-desktop-portal-gtk # XDG portal backend: file dialogs for GTK apps
     brightnessctl # Brightness keys — used by the stock Hyprland binds
     playerctl  # Playback keys (F4/F5/F6) — used by the stock Hyprland binds (MPRIS)
-    fuzzel   # App launcher — Wayland-native (README § Component choices)
     waybar   # Status bar — Wayland-native, GTK (README § Component choices)
     neovim   # Text editor — README § Component choices
     superfile # File manager TUI — README § Component choices (binary is spf)

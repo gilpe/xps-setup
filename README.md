@@ -34,7 +34,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Terminal font        | Geist Mono (Nerd, SS11 ligatures)                       |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
-| App launcher         | fsel (purpose-built floating TUI launcher — product-first decision; the composable fallback j4-dmenu-desktop + fzf stays documented; ghostty --class=appicker + window rule; AUR fsel-bin — precedent wlctl; previous frontend fuzzel remains installed in a grace period) |
+| App launcher         | fsel (purpose-built floating TUI launcher — product-first decision; the composable fallback j4-dmenu-desktop + fzf stays documented; ghostty --class=appicker + window rule; AUR fsel-bin — precedent wlctl; fuzzel retired after fsel validated live) |
 | Wallpaper daemon     | awww (formerly swww)                                    |
 | Web browser          | Brave                                                   |
 | Text editor          | Neovim                                                  |
@@ -47,6 +47,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | System monitor       | btop (all-in-one TUI — CPU/mem/disk/net/temps; theme files are a future matugen candidate) |
 | System info          | fastfetch (C fetch TUI — JSONC config + presets, Wayland-aware detection; TOML themes are a future matugen candidate) |
 | Disk usage analyzer  | ncdu (TUI, Zig 2.x — lightest of the evaluated set; delete confirmation pre-selects "no"; gdu/dua/diskonaut evaluated, dust discarded: not a TUI; colors = 3 fixed schemes — no custom-color matugen surface) |
+| Clipboard            | wl-clipboard + cliphist + fzf (pipe-composable backend + TUI picker in a floating ghostty — the emblematic case of the backend/TUI-frontend principle; all [extra]; clipse rejected: its TUI is welded to its own store — it cannot read cliphist's db; copyq rejected: Qt6 GUI, 8.7 MB; picker key: SUPER+H; fzf doubles as the future fish shell fuzzy) |
 
 ## 5. Visual identity
 

@@ -11,6 +11,6 @@ return {
     menu        = "ghostty --class=appicker -e fsel -d",  -- fsel TUI launcher in a floating
                   -- ghostty (rule in conf/rules.lua). -d/--detach: launched apps
                   -- survive the picker closing — they are NOT children the
-                  -- terminal kills on exit. (fuzzel remains installed during a
-                  -- grace period — README § Component choices: App launcher)
+                  -- terminal kills on exit. (fuzzel: retired after fsel
+                  -- validated — README § Component choices: App launcher)
 }
