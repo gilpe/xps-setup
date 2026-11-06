@@ -43,6 +43,7 @@ packages=(
     wiremix # Audio mixer TUI — PipeWire-native, no PA compat layer (README § Component choices: Audio mixer)
     btop    # System monitor TUI — all-in-one dashboard (README § Component choices: System monitor)
     fastfetch # System info TUI — terminal snapshot (README § Component choices: System info)
+    ncdu    # Disk usage analyzer TUI — with delete confirmation (README § Component choices)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"

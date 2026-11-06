@@ -46,6 +46,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Audio mixer          | wiremix (PipeWire-native TUI — no PulseAudio compat layer; routing + peak meters; TOML themes are a future matugen candidate) |
 | System monitor       | btop (all-in-one TUI — CPU/mem/disk/net/temps; theme files are a future matugen candidate) |
 | System info          | fastfetch (C fetch TUI — JSONC config + presets, Wayland-aware detection; TOML themes are a future matugen candidate) |
+| Disk usage analyzer  | ncdu (TUI, Zig 2.x — lightest of the evaluated set; delete confirmation pre-selects "no"; gdu/dua/diskonaut evaluated, dust discarded: not a TUI; colors = 3 fixed schemes — no custom-color matugen surface) |
 
 ## 5. Visual identity
 
