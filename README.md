@@ -44,6 +44,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Wi-Fi management     | wlctl (impala fork pointed at NetworkManager — impala proper is iwd-based and would force a stack migration; its doctor subcommand diagnoses the troublesome Broadcom; nmtui stays as fallback) |
 | Bluetooth management | bluetuith                                               |
 | Audio mixer          | wiremix (PipeWire-native TUI — no PulseAudio compat layer; routing + peak meters; TOML themes are a future matugen candidate) |
+| System monitor       | btop (all-in-one TUI — CPU/mem/disk/net/temps; theme files are a future matugen candidate) |
 
 ## 5. Visual identity
 

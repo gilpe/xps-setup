@@ -41,6 +41,7 @@ packages=(
     terminus-font # HiDPI console font — ter-128n (README § Component choices)
     otf-geist-mono-nerd # Nerd Font: terminal + future non-terminal consumers (README § Component choices: Terminal font)
     wiremix # Audio mixer TUI — PipeWire-native, no PA compat layer (README § Component choices: Audio mixer)
+    btop    # System monitor TUI — all-in-one dashboard (README § Component choices: System monitor)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
