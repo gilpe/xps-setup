@@ -42,6 +42,7 @@ packages=(
     otf-geist-mono-nerd # Nerd Font: terminal + future non-terminal consumers (README § Component choices: Terminal font)
     wiremix # Audio mixer TUI — PipeWire-native, no PA compat layer (README § Component choices: Audio mixer)
     btop    # System monitor TUI — all-in-one dashboard (README § Component choices: System monitor)
+    fastfetch # System info TUI — terminal snapshot (README § Component choices: System info)
 )
 
 pacman -Syu --needed --noconfirm "${packages[@]}"
