@@ -34,7 +34,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Terminal font        | Geist Mono (Nerd, SS11 ligatures)                       |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
-| App launcher         | fsel (purpose-built floating TUI launcher — product-first decision; the composable fallback j4-dmenu-desktop + fzf stays documented; ghostty --class=appicker + window rule; AUR fsel-bin — precedent wlctl; fuzzel retired after fsel validated live) |
+| App launcher         | j4-dmenu-desktop + fzf (the backend/TUI-frontend composition applied to the launcher: [extra] backend parses .desktop semantics and feeds the fzf picker in a floating ghostty; frequency sort via --usage-log; journey: fuzzel retired first, fsel TUI evaluated and retired (icons not a felt need — maturity risk); fzf --color → matugen at deep, one template for both pickers) |
 | Wallpaper daemon     | awww (formerly swww)                                    |
 | Web browser          | Brave                                                   |
 | Text editor          | Neovim                                                  |
