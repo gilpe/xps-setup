@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=fastfetch
+Exec=sh -c "fastfetch; read -n 1"
+Terminal=true
