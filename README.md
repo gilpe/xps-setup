@@ -34,7 +34,7 @@ Components (approved 2026-11-01; revisable only through an approved, documented 
 | Terminal font        | Geist Mono (Nerd, SS11 ligatures)                       |
 | Color system         | matugen (Material You, generated from the wallpaper)    |
 | Status bar           | waybar                                                  |
-| App launcher         | j4-dmenu-desktop + fzf (the backend/TUI-frontend composition applied to the launcher: [extra] backend parses .desktop semantics and feeds the fzf picker in a floating ghostty; frequency sort via --usage-log; journey: fuzzel retired first, fsel TUI evaluated and retired (icons not a felt need — maturity risk); fzf --color → matugen at deep, one template for both pickers) |
+| App launcher         | j4-dmenu-desktop + fzf (the backend/TUI-frontend composition applied to the launcher: [extra] backend parses .desktop semantics and feeds the fzf picker in a floating ghostty; frequency sort via --usage-log; journey: fuzzel retired first, fsel TUI evaluated and retired (icons not a felt need — maturity risk); fzf --color → matugen at deep, one template for both pickers; apps that take over the picker's pty (chromium-family, cold start) must be spawned by the compositor — override Exec=hyprctl dispatch "hl.dsp.exec_cmd('...')" keeps the launch outside the picker's process tree) |
 | Wallpaper daemon     | awww (formerly swww)                                    |
 | Web browser          | Brave                                                   |
 | Text editor          | Neovim                                                  |

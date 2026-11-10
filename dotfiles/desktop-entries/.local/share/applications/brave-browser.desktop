@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Brave
+Exec=hyprctl dispatch "hl.dsp.exec_cmd('brave')"
